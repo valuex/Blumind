@@ -83,32 +83,32 @@ namespace Blumind
 
         public static string WebSite
         {
-            get { return "https://github.com/funwaywang/Blumind"; }
+            get { return "https://github.com/valuex/Blumind"; }
         }
 
         public static string HelpUrl
         {
-            get { return "https://github.com/funwaywang/Blumind/wiki"; }
+            get { return "https://github.com/valuex/Blumind/wiki"; }
         }
 
         public static string UpdateUrl
         {
-            get { return "https://github.com/funwaywang/Blumind/releases"; }
+            get { return "https://github.com/valuex/Blumind/releases"; }
         }
 
         public static string FeedbackUrl
         {
-            get { return "https://github.com/funwaywang/Blumind/issues"; }
+            get { return "https://github.com/valuex/Blumind/issues"; }
         }
 
         public static string SupportEmail
         {
-            get { return "blumindorg@gmail.com"; }
+            get { return "gm2wie@gmail.com"; }
         }
 
         public static string GetInformation()
         {
-            return "Blumind is a lightweight and powerful mind mapping tool, and it is free for everyone.";
+            return "NotesMap is developped based on Blumind,\n which is a lightweight and powerful mind mapping tool, \nand the donation goes to Blumind author directly.";
         }
     }
 }

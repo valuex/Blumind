@@ -232,7 +232,7 @@
             this.TxbTwitter.ReadOnly = true;
             this.TxbTwitter.Size = new System.Drawing.Size(280, 14);
             this.TxbTwitter.TabIndex = 16;
-            this.TxbTwitter.Text = "@funway_wang";
+            this.TxbTwitter.Text = "/";
             // 
             // TxbWechat
             // 
@@ -243,7 +243,7 @@
             this.TxbWechat.ReadOnly = true;
             this.TxbWechat.Size = new System.Drawing.Size(280, 14);
             this.TxbWechat.TabIndex = 17;
-            this.TxbWechat.Text = "funway_wang";
+            this.TxbWechat.Text = "/";
             // 
             // AboutDialogBox
             // 

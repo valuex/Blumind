@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Blumind</RootNamespace>
-    <AssemblyName>Blumind</AssemblyName>
+    <AssemblyName>NotesMap</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ApplicationIcon>
@@ -884,6 +884,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\donation.png" />
+    <Content Include="logo.ico" />
     <Content Include="Resources\Icons\check_update.ico" />
     <Content Include="Resources\Icons\document.ico" />
     <Content Include="Resources\Icons\exclamation.ico" />
@@ -941,6 +942,9 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\NotesMapLogo.bmp" />
+    <None Include="Resources\NoteMap.ico" />
+    <None Include="Resources\Logo.ico" />
     <Content Include="Resources\resource.h" />
     <None Include="Resources\tip_pin_button.png" />
     <None Include="Resources\tip_pin_pressed_button.png" />

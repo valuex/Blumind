@@ -23,8 +23,8 @@ namespace Blumind
     partial class MainForm : DocumentManageForm, IThemableUI
     {
         StartMenuButton BtnStart;
-        SpecialTabItem TabNew;
-        TabBarButton BtnOpen;
+        //SpecialTabItem TabNew;
+        //TabBarButton BtnOpen;
         TabBarButton BtnHelp;
         AboutDialogBox AboutDialog;
         FindDialog MyFindDialog;
@@ -46,11 +46,9 @@ namespace Blumind
 
             InitializeTaskBar();
             InitializeShortcutKeys();
-            //OpenDocument("C:\\Users\\wei_x\\source\\repos\\Blumind\\Documents\\1240.mm");
+            
             GenOneNoteXML();
-            //
-            //startPage = new StartPage();
-            //ShowForm(startPage, false, false);
+
 
             AfterInitialize();
 

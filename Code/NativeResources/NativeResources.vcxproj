@@ -14,8 +14,8 @@
     <ResourceCompile Include="NativeResources.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\..\Downloads\Logo.ico" />
     <Image Include="..\Blumind\Resources\Icons\document.ico" />
-    <Image Include="..\Blumind\Resources\Icons\logo.ico" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{F1D94635-6AFB-4B09-9BB5-A81FB6CB9350}</ProjectGuid>

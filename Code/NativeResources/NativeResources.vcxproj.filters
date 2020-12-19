@@ -12,10 +12,10 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\Blumind\Resources\Icons\logo.ico">
+    <Image Include="..\Blumind\Resources\Icons\document.ico">
       <Filter>资源文件</Filter>
     </Image>
-    <Image Include="..\Blumind\Resources\Icons\document.ico">
+    <Image Include="..\..\..\..\..\Downloads\Logo.ico">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
