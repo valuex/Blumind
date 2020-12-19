@@ -42,6 +42,32 @@ namespace Blumind.Model.MindMaps
             return doc;
         }
 
+        public static Document LoadXMLString(string XMLString)
+        {
+            if (string.IsNullOrEmpty(XMLString))
+                throw new ArgumentNullException("filename");
+
+
+            XmlDocument dom = new XmlDocument();
+            dom.LoadXml(XMLString);
+
+            MindMap map = LoadMindMap(dom);
+
+            if (map != null)
+            {
+                //map.Filename = filename;
+                //if (string.IsNullOrEmpty(map.Name))
+                //{
+                map.Name = "AllNotes"; // Path.GetFileNameWithoutExtension(filename);
+                //}
+            }
+
+            Document doc = new Document();
+            doc.Name = map.Name;
+            doc.Charts.Add(map);
+            return doc;
+        }
+
         static MindMap LoadMindMap(XmlDocument dom)
         {
             if (dom.DocumentElement.Name != "map")
@@ -69,6 +95,8 @@ namespace Blumind.Model.MindMaps
             Topic topic = new Topic();
             topic.Text = xmlNode.GetAttribute("TEXT");
             topic.ID = xmlNode.GetAttribute("ID");
+            //topic.OnLink = xmlNode.GetAttribute("LINK");
+            topic.Hyperlink = xmlNode.GetAttribute("LINK");
             topic.BackColor = ST.GetColor(xmlNode.GetAttribute("BACKGROUND_COLOR"), topic.BackColor);
             topic.ForeColor = ST.GetColor(xmlNode.GetAttribute("COLOR"), topic.BackColor);
             topic.Folded = ST.GetBool(xmlNode.GetAttribute("FOLDED"), topic.Folded);

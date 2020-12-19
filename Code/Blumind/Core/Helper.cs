@@ -27,8 +27,13 @@ namespace Blumind
                 {
                     if (File.Exists(url) && StringComparer.OrdinalIgnoreCase.Equals(Path.GetExtension(url), Document.Extension))
                         Program.MainForm.OpenDocument(url);
+                    else if ( url.StartsWith("{") && url.EndsWith("}"))
+                    {
+                        OneNoteXML OneNoteOpner = new OneNoteXML();
+                        OneNoteOpner.NavigateTo(url);
+                    }                    
                     else
-                        Process.Start(url);
+                       Process.Start(url);
                 }
                 catch (System.Exception ex)
                 {

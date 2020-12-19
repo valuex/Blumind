@@ -27,6 +27,8 @@ namespace Blumind.Model
 
         [Browsable(false)]
         public string ID { get; set; }
+        public string OnLink { get; set; }
+
 
         [Browsable(false)]
         public ChartPage Chart

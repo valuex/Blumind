@@ -55,9 +55,10 @@
             // 
             // BtnReset
             // 
-            this.BtnReset.Location = new System.Drawing.Point(186, 117);
+            this.BtnReset.Location = new System.Drawing.Point(279, 176);
+            this.BtnReset.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnReset.Name = "BtnReset";
-            this.BtnReset.Size = new System.Drawing.Size(75, 25);
+            this.BtnReset.Size = new System.Drawing.Size(112, 38);
             this.BtnReset.TabIndex = 2;
             this.BtnReset.Text = "Reset";
             this.BtnReset.UseVisualStyleBackColor = true;
@@ -65,9 +66,10 @@
             // 
             // BtnStartStop
             // 
-            this.BtnStartStop.Location = new System.Drawing.Point(11, 117);
+            this.BtnStartStop.Location = new System.Drawing.Point(16, 176);
+            this.BtnStartStop.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.BtnStartStop.Name = "BtnStartStop";
-            this.BtnStartStop.Size = new System.Drawing.Size(75, 25);
+            this.BtnStartStop.Size = new System.Drawing.Size(112, 38);
             this.BtnStartStop.TabIndex = 1;
             this.BtnStartStop.Text = "Start";
             this.BtnStartStop.UseVisualStyleBackColor = true;
@@ -76,14 +78,15 @@
             // NudHour
             // 
             this.NudHour.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NudHour.Location = new System.Drawing.Point(3, 26);
+            this.NudHour.Location = new System.Drawing.Point(4, 39);
+            this.NudHour.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NudHour.Maximum = new decimal(new int[] {
             99,
             0,
             0,
             0});
             this.NudHour.Name = "NudHour";
-            this.NudHour.Size = new System.Drawing.Size(65, 21);
+            this.NudHour.Size = new System.Drawing.Size(100, 28);
             this.NudHour.TabIndex = 3;
             this.NudHour.ValueChanged += new System.EventHandler(this.Nud_ValueChanged);
             this.NudHour.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NudHour_KeyDown);
@@ -109,22 +112,24 @@
             this.tableLayoutPanel1.Controls.Add(this.label5, 3, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label7, 3, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 11);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(16, 16);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 42.85714F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(250, 82);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(375, 123);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // LabHours
             // 
             this.LabHours.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabHours.AutoSize = true;
-            this.LabHours.Location = new System.Drawing.Point(18, 5);
+            this.LabHours.Location = new System.Drawing.Point(27, 8);
+            this.LabHours.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabHours.Name = "LabHours";
-            this.LabHours.Size = new System.Drawing.Size(35, 12);
+            this.LabHours.Size = new System.Drawing.Size(53, 18);
             this.LabHours.TabIndex = 0;
             this.LabHours.Text = "Hours";
             // 
@@ -132,9 +137,10 @@
             // 
             this.LabMinutes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabMinutes.AutoSize = true;
-            this.LabMinutes.Location = new System.Drawing.Point(100, 5);
+            this.LabMinutes.Location = new System.Drawing.Point(151, 8);
+            this.LabMinutes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabMinutes.Name = "LabMinutes";
-            this.LabMinutes.Size = new System.Drawing.Size(47, 12);
+            this.LabMinutes.Size = new System.Drawing.Size(71, 18);
             this.LabMinutes.TabIndex = 1;
             this.LabMinutes.Text = "Minutes";
             // 
@@ -142,23 +148,25 @@
             // 
             this.LabSeconds.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabSeconds.AutoSize = true;
-            this.LabSeconds.Location = new System.Drawing.Point(190, 5);
+            this.LabSeconds.Location = new System.Drawing.Point(285, 8);
+            this.LabSeconds.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabSeconds.Name = "LabSeconds";
-            this.LabSeconds.Size = new System.Drawing.Size(47, 12);
+            this.LabSeconds.Size = new System.Drawing.Size(71, 18);
             this.LabSeconds.TabIndex = 2;
             this.LabSeconds.Text = "Seconds";
             // 
             // NudMinute
             // 
             this.NudMinute.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NudMinute.Location = new System.Drawing.Point(91, 26);
+            this.NudMinute.Location = new System.Drawing.Point(137, 39);
+            this.NudMinute.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NudMinute.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.NudMinute.Name = "NudMinute";
-            this.NudMinute.Size = new System.Drawing.Size(66, 21);
+            this.NudMinute.Size = new System.Drawing.Size(100, 28);
             this.NudMinute.TabIndex = 4;
             this.NudMinute.ValueChanged += new System.EventHandler(this.Nud_ValueChanged);
             this.NudMinute.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NudHour_KeyDown);
@@ -166,14 +174,15 @@
             // NudSecond
             // 
             this.NudSecond.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.NudSecond.Location = new System.Drawing.Point(180, 26);
+            this.NudSecond.Location = new System.Drawing.Point(270, 39);
+            this.NudSecond.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NudSecond.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.NudSecond.Name = "NudSecond";
-            this.NudSecond.Size = new System.Drawing.Size(67, 21);
+            this.NudSecond.Size = new System.Drawing.Size(101, 28);
             this.NudSecond.TabIndex = 5;
             this.NudSecond.ValueChanged += new System.EventHandler(this.Nud_ValueChanged);
             this.NudSecond.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NudHour_KeyDown);
@@ -182,9 +191,10 @@
             // 
             this.LabHourValue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabHourValue.AutoSize = true;
-            this.LabHourValue.Location = new System.Drawing.Point(27, 58);
+            this.LabHourValue.Location = new System.Drawing.Point(41, 87);
+            this.LabHourValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabHourValue.Name = "LabHourValue";
-            this.LabHourValue.Size = new System.Drawing.Size(17, 12);
+            this.LabHourValue.Size = new System.Drawing.Size(26, 18);
             this.LabHourValue.TabIndex = 6;
             this.LabHourValue.Text = "00";
             // 
@@ -192,9 +202,10 @@
             // 
             this.LabMinuteValue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabMinuteValue.AutoSize = true;
-            this.LabMinuteValue.Location = new System.Drawing.Point(115, 58);
+            this.LabMinuteValue.Location = new System.Drawing.Point(174, 87);
+            this.LabMinuteValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabMinuteValue.Name = "LabMinuteValue";
-            this.LabMinuteValue.Size = new System.Drawing.Size(17, 12);
+            this.LabMinuteValue.Size = new System.Drawing.Size(26, 18);
             this.LabMinuteValue.TabIndex = 7;
             this.LabMinuteValue.Text = "00";
             // 
@@ -202,9 +213,10 @@
             // 
             this.LabSecondValue.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.LabSecondValue.AutoSize = true;
-            this.LabSecondValue.Location = new System.Drawing.Point(205, 58);
+            this.LabSecondValue.Location = new System.Drawing.Point(307, 87);
+            this.LabSecondValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LabSecondValue.Name = "LabSecondValue";
-            this.LabSecondValue.Size = new System.Drawing.Size(17, 12);
+            this.LabSecondValue.Size = new System.Drawing.Size(26, 18);
             this.LabSecondValue.TabIndex = 8;
             this.LabSecondValue.Text = "00";
             // 
@@ -212,9 +224,10 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(74, 28);
+            this.label4.Location = new System.Drawing.Point(112, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(11, 12);
+            this.label4.Size = new System.Drawing.Size(17, 18);
             this.label4.TabIndex = 9;
             this.label4.Text = ":";
             // 
@@ -222,9 +235,10 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(163, 28);
+            this.label5.Location = new System.Drawing.Point(245, 43);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(11, 12);
+            this.label5.Size = new System.Drawing.Size(17, 18);
             this.label5.TabIndex = 10;
             this.label5.Text = ":";
             // 
@@ -232,9 +246,10 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(74, 58);
+            this.label6.Location = new System.Drawing.Point(112, 87);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(11, 12);
+            this.label6.Size = new System.Drawing.Size(17, 18);
             this.label6.TabIndex = 11;
             this.label6.Text = ":";
             // 
@@ -242,9 +257,10 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(163, 58);
+            this.label7.Location = new System.Drawing.Point(245, 87);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(11, 12);
+            this.label7.Size = new System.Drawing.Size(17, 18);
             this.label7.TabIndex = 12;
             this.label7.Text = ":";
             // 
@@ -255,21 +271,23 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(11, 99);
+            this.progressBar1.Location = new System.Drawing.Point(16, 148);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(250, 8);
+            this.progressBar1.Size = new System.Drawing.Size(375, 12);
             this.progressBar1.TabIndex = 3;
             // 
             // TimerDialog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 153);
+            this.ClientSize = new System.Drawing.Size(408, 230);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.BtnStartStop);
             this.Controls.Add(this.BtnReset);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "TimerDialog";
             this.Text = "Timer";
             ((System.ComponentModel.ISupportInitialize)(this.NudHour)).EndInit();

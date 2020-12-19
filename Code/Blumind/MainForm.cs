@@ -5,7 +5,6 @@ using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
-using System.Linq;
 using Blumind.Configuration;
 using Blumind.Controls;
 using Blumind.Controls.OS;
@@ -17,6 +16,7 @@ using Blumind.Model.Documents;
 using Blumind.Model.MindMaps;
 using Blumind.Model.Styles;
 using Blumind.Core.Win32Apis;
+using System.Linq;
 
 namespace Blumind
 {
@@ -33,7 +33,7 @@ namespace Blumind
         ToolStripMenuItem MenuClearRecentFiles;
         ShortcutKeysTable ShortcutKeys;
         bool ImportMenusHasBuilded;
-        StartPage startPage;
+        //StartPage startPage;
 
         public MainForm()
         {
@@ -46,10 +46,11 @@ namespace Blumind
 
             InitializeTaskBar();
             InitializeShortcutKeys();
-
+            //OpenDocument("C:\\Users\\wei_x\\source\\repos\\Blumind\\Documents\\1240.mm");
+            GenOneNoteXML();
             //
-            startPage = new StartPage();
-            ShowForm(startPage, false, false);
+            //startPage = new StartPage();
+            //ShowForm(startPage, false, false);
 
             AfterInitialize();
 
@@ -64,6 +65,12 @@ namespace Blumind
             var files = args.Where(arg => !arg.StartsWith("-")).ToArray();
             OpenDocuments(files);
         }
+        void GenOneNoteXML()
+        {
+            OneNoteXML OneNoteAllNotesXML = new OneNoteXML();
+            string OneNoteHirarchyXML = OneNoteAllNotesXML.GetAllNotes();
+            OpenDocument1(OneNoteHirarchyXML, true);
+        }
 
         void InitializeTaskBar()
         {
@@ -76,17 +83,17 @@ namespace Blumind
             BtnStart = new StartMenuButton();
             BtnStart.Text = "Menu";
             BtnStart.Click += new EventHandler(BtnStart_Click);
-
-            //BtnNew = new TabBarButton();
-            //BtnNew.Icon = Properties.Resources._new;
-            //BtnNew.ToolTipText = "Create New Document";
-            //BtnNew.Click += new EventHandler(MenuNew_Click);
+            /*
+            BtnNew = new TabBarButton();
+            BtnNew.Icon = Properties.Resources._new;
+            BtnNew.ToolTipText = "Create New Document";
+            BtnNew.Click += new EventHandler(MenuNew_Click);
 
             BtnOpen = new TabBarButton();
             BtnOpen.Icon = Properties.Resources.open;
             BtnOpen.ToolTipText = "Open Document...";
             BtnOpen.Click += new EventHandler(MenuOpen_Click);
-
+            */
             BtnHelp = new TabBarButton();
             BtnHelp.Icon = Properties.Resources.help;
             BtnHelp.Text = "Help";
@@ -94,7 +101,7 @@ namespace Blumind
 
             TaskBar.LeftButtons.Add(BtnStart);
             //TaskBar.LeftButtons.Add(BtnNew);
-            TaskBar.LeftButtons.Add(BtnOpen);
+            //TaskBar.LeftButtons.Add(BtnOpen);
             TaskBar.RightButtons.Add(BtnHelp);
             TaskBar.Items.ItemAdded += TaskBar_Items_ItemAdded;
             TaskBar.Items.ItemRemoved += TaskBar_Items_ItemRemoved;
@@ -102,10 +109,11 @@ namespace Blumind
             MenuHelps.DropDown = HelpMenu;
             MenuQuickHelp.Enabled = Helper.HasQuickHelp();
 
-            //
+            /*
             TabNew = new SpecialTabItem(Properties.Resources._new);
             TabNew.Click +=new EventHandler(MenuNew_Click);
             TaskBar.RightSpecialTabs.Add(TabNew);
+            */
         }
 
         void InitializeWindowStates()
@@ -168,6 +176,33 @@ namespace Blumind
                 FileInfo fif = new FileInfo(filename);
                 OpenDocument(filename, fif.IsReadOnly);
             }
+        }
+
+        public void OpenDocument1(string OneNoteXML, bool readOnly)
+        {
+            BaseDocumentForm form = null;
+            try
+            {
+                Document doc = null;
+                doc = FreeMindFile.LoadXMLString(OneNoteXML);
+
+                if (doc != null)
+                {
+                    form = OpenDocument(doc, readOnly);
+                    if (form != null)
+                        form.Filename = "AllNotes";
+                }
+
+                    //RecentFilesManage.Default.Push(filename);
+                    Cursor.Current = Cursors.Default;
+            }
+            catch (System.Exception ex)
+            {
+                Cursor.Current = Cursors.Default;
+                Helper.WriteLog(ex);
+                this.ShowMessage("File name is invalid or the format is not supported", MessageBoxIcon.Error);
+            }
+            
         }
 
         public void OpenDocument(string filename, bool readOnly)
@@ -461,9 +496,9 @@ namespace Blumind
             ResetWindowTitle();
 
             BtnStart.Text = Lang._("Menu");
-            BtnOpen.ToolTipText = Lang.GetText(Lang.GetTextWithEllipsis("Open a old file"), Keys.Control | Keys.O);
+            //BtnOpen.ToolTipText = Lang.GetText(Lang.GetTextWithEllipsis("Open a old file"), Keys.Control | Keys.O);
             //BtnNew.Text = Lang._("New");
-            TabNew.ToolTipText = Lang.GetText(Lang._("Create a new Mind Map"), Keys.Control | Keys.N);
+            //TabNew.ToolTipText = Lang.GetText(Lang._("Create a new Mind Map"), Keys.Control | Keys.N);
             BtnHelp.Text = BtnHelp.ToolTipText = Lang._("Help");
             MenuNew.Text = Lang._("New");
             MenuOpen.Text = Lang.GetTextWithEllipsis("Open");
@@ -933,8 +968,8 @@ namespace Blumind
         void RefreshFunctionTaskBarItems()
         {
             var hasForms = TaskBar.Items.Exists(item => item.Tag is Form);            
-            TabNew.Visible = hasForms;
-            BtnOpen.Visible = hasForms;
+            //TabNew.Visible = hasForms;
+            //BtnOpen.Visible = hasForms;
         }
 
         private void MenuDonation_Click(object sender, EventArgs e)
