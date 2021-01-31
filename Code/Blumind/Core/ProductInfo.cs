@@ -83,22 +83,22 @@ namespace Blumind
 
         public static string WebSite
         {
-            get { return "https://github.com/valuex/Blumind"; }
+            get { return "https://github.com/valuex/NotesMap"; }
         }
 
         public static string HelpUrl
         {
-            get { return "https://github.com/valuex/Blumind/wiki"; }
+            get { return "https://github.com/valuex/NotesMap/wiki"; }
         }
 
         public static string UpdateUrl
         {
-            get { return "https://github.com/valuex/Blumind/releases"; }
+            get { return "https://github.com/valuex/NotesMap/releases"; }
         }
 
         public static string FeedbackUrl
         {
-            get { return "https://github.com/valuex/Blumind/issues"; }
+            get { return "https://github.com/valuex/NotesMap/issues"; }
         }
 
         public static string SupportEmail

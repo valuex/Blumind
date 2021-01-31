@@ -47,7 +47,7 @@ namespace Blumind
             InitializeTaskBar();
             InitializeShortcutKeys();
             
-            GenOneNoteXML();
+            //GenOneNoteXML();
 
 
             AfterInitialize();
@@ -61,12 +61,14 @@ namespace Blumind
             : this()
         {
             var files = args.Where(arg => !arg.StartsWith("-")).ToArray();
-            OpenDocuments(files);
+            //OpenDocuments(files);
+            GenOneNoteXML();
+
         }
         void GenOneNoteXML()
         {
             OneNoteXML OneNoteAllNotesXML = new OneNoteXML();
-            string OneNoteHirarchyXML = OneNoteAllNotesXML.GetAllNotes();
+            string OneNoteHirarchyXML = OneNoteAllNotesXML.GetActiveNotebookNotes();
             OpenDocument1(OneNoteHirarchyXML, true);
         }
 

@@ -20,6 +20,23 @@ namespace Blumind.Core
             string mmXML=SaveIntoBMD(notebookXml);
             return mmXML;
         }
+        public string GetActiveNotebookNotes()
+        {
+            // get the onenote xml data
+            string CurNoteBookID = onenoteApp.Windows.CurrentWindow.CurrentNotebookId;
+            onenoteApp.GetHierarchy(CurNoteBookID, HierarchyScope.hsPages, out notebookXml, XMLSchema.xs2013);
+            string mmXML = SaveIntoBMD(notebookXml);
+            return mmXML;
+        }
+        public string GetActiveSectionNotes()
+        {
+            // get the onenote xml data
+            string CurSectionID = onenoteApp.Windows.CurrentWindow.CurrentSectionId;
+            string currentOpenPage = onenoteApp.Windows.CurrentWindow.CurrentPageId;
+            onenoteApp.GetHierarchy(CurSectionID, HierarchyScope.hsPages, out notebookXml, XMLSchema.xs2013);
+            string mmXML = SaveIntoBMD(notebookXml);
+            return mmXML;
+        }
 
         public void  NavigateTo(string PgID)
         {
@@ -43,7 +60,8 @@ namespace Blumind.Core
             string[] mmXMLArr = mmXML.Split(new string[] { "\n", "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             string ph0 = "<map version=\"0.9.0\">\n";
-            string ph1 = "<node BACKGROUND_COLOR = \"#BC8F8F\" COLOR = \"#000000\" ID = \"1\" POSITION = \"left\" TEXT = \"NoteBooks\" HGAP = \"12\" VGAP = \"12\" >";
+            string RootEleName = GetRootEleName(mmXMLArr[1]);
+            string ph1 = "<node BACKGROUND_COLOR = \"#BC8F8F\" COLOR = \"#000000\" ID = \"1\" POSITION = \"left\" " + RootEleName + " HGAP = \"12\" VGAP = \"12\" >";
             ph1 = ph1 + "\n<font FONT_FAMILY=\"微软雅黑\" SIZE=\"14\" STYLE=\"Regular\" />";
             string ph2 = "";
             int NIndex = 1;
@@ -88,7 +106,26 @@ namespace Blumind.Core
             //File.WriteAllText(@"C:\Users\wei_x\source\repos\Blumind\Documents\1240.mm", ConvertedXML);
             return ConvertedXML;
 
+        }
+        private string GetRootEleName(string strInput)
+        {
+            if (strInput.Contains("<one:Notebook ") || strInput.Contains("<one:Section "))
+            {
+                strInput = strInput.Replace("<one:", "<");
+                strInput = strInput.Substring(0, strInput.Length - 1) + "/>";  //add "/" to fit the xml gramma 
 
+                XElement root = XElement.Parse(strInput);
+                string name = root.Attribute("name").Value;
+                string strID = root.Attribute("ID").Value;
+                string rootEleInfo = "TEXT = \"" + name + "\" LINK= \"" + strID + "\"";
+                return rootEleInfo;
+
+            }
+            else
+            {
+                string rootEleInfo = "TEXT = \"Notebooks\"" ;
+                return rootEleInfo;
+            }
 
         }
         private string GenPageNode(string OriInfo, int NodeIndex)
